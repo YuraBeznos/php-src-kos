@@ -37,7 +37,7 @@ fi
 
 export PATH="$SDK_PREFIX/toolchain/bin:$PATH"
 
-(cd $SCRIPT_DIR/../../ && git submodule update --init --depth=1 third_party/openssl && cd third_party/openssl && ./config && make build_generated)
+(cd $SCRIPT_DIR/../../ && git submodule update --init --depth=1 third_party/openssl && cd third_party/openssl && git checkout 830bf8e1e4749ad65c51b6a1d0d769ae689404ba && ./config && make build_generated)
 
 $SDK_PREFIX/toolchain/bin/cmake -G "Unix Makefiles" \
       -D CMAKE_BUILD_TYPE:STRING=Release \
